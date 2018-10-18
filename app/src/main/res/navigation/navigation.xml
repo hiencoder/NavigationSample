@@ -89,4 +89,34 @@
         <deepLink
             app:uri="www.example.com/user/{userName}"/>
     </fragment>
+
+    <!--Fragment InGame-->
+    <fragment
+        android:id="@+id/in_game_fragment"
+        android:name="com.example.hiennv.navigation.ui.fragment.FragmentInGame"
+        android:label="in_game_fragment"
+        tools:layout="@layout/fragment_in_game">
+        <!--Chuyen den fragment winner-->
+        <action
+            android:id="@+id/action_to_result_winner"
+            app:destination="@id/result_winner_fragment"
+            app:popUpTo="@id/match_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <!--Chuyen den fragment gameover-->
+        <action
+            android:id="@+id/action_to_game_over"
+            app:destination="@id/game_over_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <!--Fragment Result winner-->
+
+    <!--Fragment Game Over-->
 </navigation>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/title_screen">
+    <!--Fragment title screen-->
+    <fragment
+        android:id="@+id/title_screen"
+        android:name="com.example.hiennv.navigationsample.ui.fragment.TitleScreenFragment"
+        android:label="title_screen_fragment"
+        tools:layout="@layout/fragment_title_screen">
+        <!--Chuyen den fragment register-->
+        <action
+            android:id="@+id/action_fragment_title_screen"
+            app:destination="@id/register_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_right" />
+
+        <!--Chuyen den fragment leader board-->
+        <action
+            android:id="@+id/action_fragment_leader_board"
+            app:destination="@id/leader_board_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!--Fragment register-->
+    <fragment
+        android:id="@+id/register_fragment"
+        android:name="com.example.hiennv.navigationsample.ui.fragment.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/fragment_register">
+        <!--Chuyen den fragment match-->
+        <action
+            android:id="@+id/action_fragment_match"
+            app:destination="@id/match_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <!--Fragment leader board-->
+    <fragment
+        android:id="@+id/leader_board_fragment"
+        android:name="com.example.hiennv.navigation.ui.fragment.LeaderBoardFragment"
+        android:label="leader_board_fragment"
+        tools:layout="@layout/fragment_leader_board">
+        <!--Chuyen den fragment user profile-->
+        <action
+            android:id="@+id/action_user_profile"
+            app:destination="@id/user_profile_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <!--Fragment match-->
+    <fragment
+        android:id="@+id/match_fragment"
+        android:name="com.example.hiennv.navigation.ui.fragment.MatchFragment"
+        android:label="match_fragment"
+        tools:layout="@layout/fragment_match">
+        <!--Chuyen den fragment choi game-->
+        <action
+            android:id="@+id/action_in_game"
+            app:destination="@id/in_game_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <!--Fragment user profile-->
+    <fragment
+        android:id="@+id/user_profile_fragment"
+        android:name="com.example.hiennv.navigation.ui.fragment.UserInfoFragment"
+        android:label="match_fragment"
+        tools:layout="@layout/fragment_user_profile">
+        <!--Fetch user info-->
+        <argument android:name="userName"
+            android:defaultValue="name"/>
+        <deepLink
+            app:uri="www.example.com/user/{userName}"/>
+    </fragment>
+</navigation>

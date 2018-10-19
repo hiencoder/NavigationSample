@@ -8,15 +8,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MatchFragment extends Fragment{
+import com.example.hiennv.navigationsample.R;
+
+import androidx.navigation.Navigation;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class MatchFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        view = inflater.inflate(R.layout.fragment_match, container, false);
+        ButterKnife.bind(this, view);
+        return view;
+    }
+
+    @OnClick(R.id.btn_start)
+    void doClick(View v){
+        switch (v.getId()){
+            case R.id.btn_start:
+                Navigation.findNavController(view).navigate(R.id.action_in_game);
+                break;
+        }
     }
 }

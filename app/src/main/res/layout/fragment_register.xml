@@ -1,6 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Select an avatar"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/avatar1"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:srcCompat="@drawable/avatar_10_raster" />
+
+    <ImageView
+        android:id="@+id/avatar2"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:layout_constraintLeft_toRightOf="@id/avatar1"
+        app:layout_constraintRight_toLeftOf="@+id/avatar3"
+        app:layout_constraintTop_toTopOf="@+id/avatar1"
+        app:srcCompat="@drawable/avatar_11_raster" />
+
+    <ImageView
+        android:id="@+id/avatar3"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/avatar1"
+        app:srcCompat="@drawable/avatar_13_raster" />
+
+    <ImageView
+        android:id="@+id/avatar4"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/avatar1"
+        app:layout_constraintTop_toBottomOf="@+id/avatar1"
+        app:srcCompat="@drawable/avatar_15_raster" />
+
+    <ImageView
+        android:id="@+id/avatar5"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:layout_constraintLeft_toLeftOf="@id/avatar2"
+        app:layout_constraintRight_toRightOf="@+id/avatar2"
+        app:layout_constraintTop_toTopOf="@+id/avatar4"
+        app:srcCompat="@drawable/avatar_2_raster" />
+
+    <ImageView
+        android:id="@+id/avatar6"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:layout_constraintLeft_toLeftOf="@+id/avatar3"
+        app:layout_constraintRight_toRightOf="@+id/avatar3"
+        app:layout_constraintTop_toTopOf="@+id/avatar4"
+        app:srcCompat="@drawable/avatar_4_raster" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar4" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintLeft_toLeftOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_name"
+        app:layout_constraintRight_toRightOf="@+id/et_name"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintLeft_toLeftOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
+        app:layout_constraintRight_toRightOf="@+id/et_name"/>
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:text="Sign up"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"/>
 
 </android.support.constraint.ConstraintLayout>

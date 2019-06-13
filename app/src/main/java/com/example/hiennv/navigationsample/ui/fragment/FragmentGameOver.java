@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.example.hiennv.navigationsample.R;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class FragmentGameOver extends Fragment {
     @Override
@@ -24,5 +25,13 @@ public class FragmentGameOver extends Fragment {
         View view = inflater.inflate(R.layout.fragment_game_over, container, false);
         ButterKnife.bind(this, view);
         return view;
+    }
+
+    @OnClick(R.id.play_btn4)
+    void doClick(View v) {
+        switch (v.getId()) {
+            case R.id.play_btn4:
+                break;
+        }
     }
 }

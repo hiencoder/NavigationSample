@@ -43,6 +43,7 @@ public class FragmentResultWinner extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_result_winner_match);
                 break;
             case R.id.btn_leader_board:
+                //Điều hướng đến fragment leader
                 Navigation.findNavController(view).navigate(R.id.action_fragment_leader_board);
                 break;
         }

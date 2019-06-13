@@ -11,17 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hiennv.navigationsample.R;
+import com.example.hiennv.navigationsample.Rank;
 
 import java.util.List;
 
 import androidx.navigation.Navigation;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
-    private List<String> users;
+    private List<Rank> users;
 
-    public UserAdapter(List<String> users) {
+    public UserAdapter(List<Rank> users) {
         this.users = users;
     }
 
@@ -34,10 +36,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull UserHolder userHolder, int position) {
-        userHolder.tvUserName.setText(users.get(position));
+        Rank rank = users.get(position);
+        userHolder.bindRank(rank);
         userHolder.itemView.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            bundle.putString("key_name", users.get(position));
+            bundle.putSerializable("key_name", rank);
             Navigation.findNavController(userHolder.itemView).navigate(R.id.action_user_profile, bundle);
         });
     }
@@ -54,10 +57,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
         TextView tvUserName;
         @BindView(R.id.tv_user_points)
         TextView tvUserPoint;
+        @BindView(R.id.tv_user_rank)
+        TextView tvUserRank;
 
         public UserHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+        }
+
+        public void bindRank(Rank rank) {
+            ivAvatar.setImageResource(rank.getAvatar());
+            tvUserName.setText(rank.getName());
+            tvUserPoint.setText(rank.getPoint());
+            tvUserRank.setText("#" + rank.getRank());
         }
     }
 }

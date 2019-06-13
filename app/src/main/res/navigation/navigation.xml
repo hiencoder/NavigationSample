@@ -128,7 +128,7 @@
         <!--Chuyen den fragment choi game-->
         <action
             android:id="@+id/action_result_winner_match"
-            app:destination="@id/in_game_fragment"
+            app:destination="@id/match_fragment"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"

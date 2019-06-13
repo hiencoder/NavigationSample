@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hiennv.navigationsample.R;
+import com.example.hiennv.navigationsample.Rank;
 import com.example.hiennv.navigationsample.adapter.UserAdapter;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class LeaderBoardFragment extends Fragment{
     @BindView(R.id.rv_leader_board)
     RecyclerView rvLeaderBoard;
     private UserAdapter userAdapter;
-    private List<String> users;
+    private List<Rank> users;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +35,13 @@ public class LeaderBoardFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_leader_board,container,false);
         ButterKnife.bind(this,view);
         users = new ArrayList<>();
-        users.add("Mr.A");
-        users.add("Mr.B");
-        users.add("Mr.C");
+        users.add(new Rank(R.drawable.avatar_1_raster,"Mr.A","1000pts","1"));
+        users.add(new Rank(R.drawable.avatar_2_raster,"Mr.B","900pts","2"));
+        users.add(new Rank(R.drawable.avatar_3_raster,"Mr.C","850pts","3"));
+        users.add(new Rank(R.drawable.avatar_4_raster,"Mr.D","800pts","4"));
         userAdapter = new UserAdapter(users);
         rvLeaderBoard.setAdapter(userAdapter);
+
         return view;
     }
 }

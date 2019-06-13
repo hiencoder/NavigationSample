@@ -17,9 +17,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TitleScreenFragment extends Fragment {
     @BindView(R.id.btn_play)
     Button btnPlay;
@@ -27,14 +24,12 @@ public class TitleScreenFragment extends Fragment {
     TextView btnLeaderBoard;
     View view;
     public TitleScreenFragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_title_screen, container, false);
         ButterKnife.bind(this,view);
         return view;
